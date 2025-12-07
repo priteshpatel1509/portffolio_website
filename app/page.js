@@ -195,9 +195,7 @@ body {
           {[{ title: "Virtual Assistant", img: "tri1.png" },
           { title: "Library Management System", img: "lms.png" },
           { title: "Database Management ", img: "crud.png" },
-          { title: "Demo", img: "#" },
-          { title: "Demo ", img: "#" },
-          { title: "Demo ", img: "#" }
+          
           ].map((p, i) => (
             <div key={i} className="bg-[#111] rounded-2xl overflow-hidden shadow-lg  hover:border-cyan-400 transition-all duration-500 hover:scale-105 border-3 border-lime-300">
               <img src={p.img} alt={p.title} className="w-full h-50 sm:h-56 object-cover opacity-80 hover:opacity-100 border-20 border-black" />
