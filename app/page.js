@@ -160,7 +160,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left lg:text-left">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              <span className="text-6xl">Hi, I'm Pritesh Patel</span>
+              <span className="text-5xl">Hi, I'm Pritesh Patel</span>
             </h1>
             <p className="text-gray-300 text-xl sm:text-2xl mb-8 leading-relaxed">Full-Stack Java Developer & UI/UX Enthusiast</p>
             <a href="#projects" className="inline-block px-10 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300 text-lg font-semibold glow-effect">
