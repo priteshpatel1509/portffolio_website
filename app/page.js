@@ -104,8 +104,9 @@ export default function Portfolio() {
     { name: "HTML", logo: "/html5.jpg" },
     { name: "CSS", logo: "/css.jpg" },
     { name: "JavaScript", logo: "/js.jpg" },
+    { name: "Java", logo: "/java.jpeg" },
     { name: "React", logo: "/reactjs1.jpg" },
-    { name: "Next.js", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" },
+    { name: "Next.js", logo: "/next2.jpg" },
     { name: "TailwindCSS", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
     { name: "PHP", logo: "/php1.jpg" },
     { name: "MySQL", logo: "/mysql.jpg" },
@@ -159,24 +160,26 @@ export default function Portfolio() {
       <section id="home" className="min-h-screen px-4 lg:px-8 pt-20 bg-gradient-to-b from-black via-blue-950 to-black flex items-center fade-in">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left lg:text-left">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              <span className="text-5xl">Hi, I'm Pritesh Patel</span>
+            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent leading-tight">
+              Hi, I'm<br />Pritesh Patel
             </h1>
-            <p className="text-gray-300 text-xl sm:text-2xl mb-8 leading-relaxed">Full-Stack Java Developer & UI/UX Enthusiast</p>
-            <a href="#projects" className="inline-block px-10 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300 text-lg font-semibold glow-effect">
+            <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-8 leading-relaxed">Full-Stack Java Developer & UI/UX Enthusiast</p>
+            <a href="#projects" className="inline-block px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300 text-sm sm:text-base font-semibold glow-effect">
               Explore My Work
             </a>
           </div>
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <img
-                src="/m3.png"
-                alt="Pritesh Patel Profile"
-                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out animate-pulse-custom glow-effect"
-              />
+              <div className="rounded-full p-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out glow-effect">
+                <img
+                  src="/m3.png"
+                  alt="Pritesh Patel Profile"
+                  className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover animate-pulse-custom"
+                />
+              </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 blur-2xl opacity-60 animate-ping"></div>
-              <div className="absolute top-4 left-4 w-5 h-5 bg-cyan-400 rounded-full opacity-80 animate-bounce-custom"></div>
-              <div className="absolute bottom-4 right-4 w-6 h-6 bg-pink-400 rounded-full opacity-80 animate-bounce-custom delay-1000"></div>
+              <div className="absolute top-2 left-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-cyan-400 rounded-full opacity-80 animate-bounce-custom"></div>
+              <div className="absolute bottom-2 right-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-pink-400 rounded-full opacity-80 animate-bounce-custom delay-1000"></div>
             </div>
           </div>
         </div>
@@ -187,14 +190,16 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <img
-                src="/m3.png"
-                alt="Pritesh Patel Profile"
-                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out animate-pulse-custom glow-effect"
-              />
+              <div className="rounded-full p-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out glow-effect">
+                <img
+                  src="/m3.png"
+                  alt="Pritesh Patel Profile"
+                  className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover animate-pulse-custom"
+                />
+              </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 blur-2xl opacity-60 animate-ping"></div>
-              <div className="absolute top-4 left-4 w-5 h-5 bg-cyan-400 rounded-full opacity-80 animate-bounce-custom"></div>
-              <div className="absolute bottom-4 right-4 w-6 h-6 bg-pink-400 rounded-full opacity-80 animate-bounce-custom delay-1000"></div>
+              <div className="absolute top-2 left-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-cyan-400 rounded-full opacity-80 animate-bounce-custom"></div>
+              <div className="absolute bottom-2 right-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-pink-400 rounded-full opacity-80 animate-bounce-custom delay-1000"></div>
             </div>
           </div>
           <div className="text-left lg:text-left">
@@ -235,11 +240,11 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 lg:px-8 bg-gradient-to-b from-blue-950 via-black to-blue-950 fade-in delay-3">
+      <section id="skills" className="py-20 px-4 lg:px-8 bg-gradient-to-b from-blue-950 via-black to-blue-950 fade-in delay-3 " >
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-amber-400">Skills & Technologies</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
           {skills.map((skill, i) => (
-            <div key={i} className="bg-gray-800 py-6 rounded-xl hover:border-cyan-400 hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center border-2 border-gray-700 glow-effect animate-bounce-custom">
+            <div key={i} className="bg-black py-6 rounded-xl hover:border-cyan-400 hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center border-2 border-gray-700 glow-effect">
               <img src={skill.logo} alt={skill.name} className="w-12 h-12 mb-3" />
               <span className="text-gray-300 text-sm font-medium">{skill.name}</span>
             </div>
@@ -280,16 +285,11 @@ export default function Portfolio() {
           <a href="mailto:priteshpatel@email.com" className="border-2 border-cyan-400 px-8 py-4 rounded-full text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 text-lg font-semibold glow-effect">
             Email Me
           </a>
-          <a href="https://linkedin.com/in/priteshpatel" className="border-2 border-gray-600 px-8 py-4 rounded-full text-gray-400 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 text-lg font-semibold">
+          <a href="https://linkedin.com/in/priteshpatel" className="border-2 border-gray-600 px-8 py-4 rounded-full text-gray-400 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 text-lg font-semibold glow-effect">
             LinkedIn
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="text-center py-6 text-white border-t border-gray-700 text-sm">
-        © {new Date().getFullYear()} Pritesh Patel | All Rights Reserved
-      </footer>
     </div>
   );
-}
+} 
