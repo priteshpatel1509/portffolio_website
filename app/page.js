@@ -1,103 +1,7 @@
-// No need for Image import since we're using regular img tags
+// Optimized page.js for a High-End Portfolio
+"use client";
 
 export default function Portfolio() {
-  const typingStyles = `
-    /* Enhanced Typing Animation */
-    .typing-text {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 0;
-      border-right: 0.15em solid #00d4ff; /* Cyan cursor */
-      animation: typing 4s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: #00d4ff; }
-    }
-
-    /* Smooth Scroll and Hide Scrollbars */
-    html {
-      scroll-behavior: smooth;
-      scrollbar-width: none; /* Firefox */
-    }
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    body {
-      overflow-x: hidden;
-    }
-
-    /* Mobile Menu Enhancements */
-    #menu-toggle {
-      display: none;
-    }
-    #menu-toggle:checked ~ .mobile-menu {
-      display: block;
-      animation: slideDown 0.3s ease-out;
-    }
-    .mobile-menu {
-      display: none;
-    }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Toggle Icon Styles */
-    .open-icon { display: inline; }
-    .close-icon { display: none; }
-    #menu-toggle:checked ~ label .open-icon { display: none; }
-    #menu-toggle:checked ~ label .close-icon { display: inline; }
-
-    /* Custom Utilities */
-    .w-47 { width: 11.75rem; }
-    .h-47 { height: 11.75rem; }
-    .w-55 { width: 13.75rem; }
-    .h-55 { height: 13.75rem; }
-
-    /* Glow and Hover Effects */
-    .glow-effect {
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-      transition: box-shadow 0.3s ease;
-    }
-    .glow-effect:hover {
-      box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
-    }
-
-    /* Fade-in Animation with Delays */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    .fade-in.delay-1 { animation-delay: 0.2s; }
-    .fade-in.delay-2 { animation-delay: 0.4s; }
-    .fade-in.delay-3 { animation-delay: 0.6s; }
-    .fade-in.delay-4 { animation-delay: 0.8s; }
-    .fade-in.delay-5 { animation-delay: 1s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Pulse and Bounce Enhancements */
-    .animate-pulse-custom {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    .animate-bounce-custom {
-      animation: bounce 1s infinite;
-    }
-  `;
-
   const sections = ["home", "about", "projects", "skills", "certificates", "contact"];
 
   const skills = [
@@ -113,183 +17,150 @@ export default function Portfolio() {
     { name: "Git", logo: "/git.jpg" },
     { name: "Python", logo: "/python.jpg" },
     { name: "Node.js", logo: "/nodejs.jpg" },
-    { name: "UI/UX Design", logo: "https://cdn-icons-png.flaticon.com/512/1006/1006547.png" },
   ];
 
   return (
-    <div className="min-h-screen font-sans text-white bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-cyan-600 shadow-lg" role="navigation" aria-label="Main navigation">
-        <input type="checkbox" id="menu-toggle" className="hidden" />
-        <label htmlFor="menu-toggle" className="md:hidden text-cyan-400 text-2xl cursor-pointer p-3 hover:text-cyan-300 transition-colors" aria-label="Toggle menu">
-          <span className="open-icon">☰</span>
-          <span className="close-icon">✕</span>
-        </label>
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 lg:px-8 py-4">
-          <div className="flex items-center space-x-3">
-            <img src="/mylogo.jpg" alt="Pritesh Patel Logo" className="w-10 h-10 object-contain" />
-            <h1 className="text-xl lg:text-2xl font-bold text-cyan-400 tracking-wide">Pritesh Patel</h1>
+    <div className="min-h-screen bg-[#030712] text-slate-200 selection:bg-cyan-500/30">
+      {/* Dynamic Background Mesh */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-cyan-500/10 blur-[120px] animate-pulse"></div>
+        <div className="absolute top-[40%] -right-[10%] w-[30%] h-[50%] rounded-full bg-purple-500/10 blur-[120px] animate-bounce-slow"></div>
+      </div>
+
+      {/* Navbar - Glassmorphism */}
+      <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/60 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-bold text-black group-hover:rotate-12 transition-transform">
+              PP
+            </div>
+            <span className="text-xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+              PRITESH <span className="text-cyan-400">PATEL</span>
+            </span>
           </div>
-          <ul className="hidden md:flex space-x-8">
+          
+          <ul className="hidden md:flex items-center space-x-1">
             {sections.map((item) => (
               <li key={item}>
-                <a href={`#${item}`} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 capitalize font-medium">
+                <a href={`#${item}`} className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-cyan-400 transition-all rounded-full hover:bg-white/5 capitalize">
                   {item}
                 </a>
               </li>
             ))}
-          </ul>
-        </div>
-        <div className="mobile-menu md:hidden bg-black/95 backdrop-blur-lg border-t border-cyan-600">
-          <ul className="flex flex-col space-y-4 px-4 py-4">
-            {sections.map((item) => (
-              <li key={item}>
-                <label htmlFor="menu-toggle">
-                  <a href={`#${item}`} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 capitalize block font-medium">
-                    {item}
-                  </a>
-                </label>
-              </li>
-            ))}
+            <li className="ml-4">
+              <a href="#contact" className="px-5 py-2 bg-white text-black text-sm font-bold rounded-full hover:bg-cyan-400 transition-colors">
+                Hire Me
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
-      <section id="home" className="min-h-screen px-4 lg:px-8 pt-20 bg-gradient-to-b from-black via-blue-950 to-black flex items-center fade-in">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-left lg:text-left">
-            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent leading-tight">
-              Hi, I'm<br />Pritesh Patel
+      <section id="home" className="relative min-h-screen flex items-center px-6 pt-20">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium tracking-wider uppercase">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              </span>
+              <span>Available for projects</span>
+            </div>
+            <h1 className="text-5xl lg:text-8xl font-black leading-[1.1] tracking-tight">
+              Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Driven</span> <br />
+              Development.
             </h1>
-            <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-8 leading-relaxed">Full-Stack Java Developer & UI/UX Enthusiast</p>
-            <a href="#projects" className="inline-block px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300 text-sm sm:text-base font-semibold glow-effect">
-              Explore My Work
-            </a>
-          </div>
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="rounded-full p-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out glow-effect">
-                <img
-                  src="/m3.png"
-                  alt="Pritesh Patel Profile"
-                  className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover animate-pulse-custom"
-                />
-              </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 blur-2xl opacity-60 animate-ping"></div>
-              <div className="absolute top-2 left-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-cyan-400 rounded-full opacity-80 animate-bounce-custom"></div>
-              <div className="absolute bottom-2 right-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-pink-400 rounded-full opacity-80 animate-bounce-custom delay-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="min-h-screen px-4 lg:px-8 pt-20 bg-gradient-to-b from-blue-950 via-black to-blue-950 flex items-center fade-in delay-1">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="rounded-full p-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out glow-effect">
-                <img
-                  src="/m3.png"
-                  alt="Pritesh Patel Profile"
-                  className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover animate-pulse-custom"
-                />
-              </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 blur-2xl opacity-60 animate-ping"></div>
-              <div className="absolute top-2 left-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-cyan-400 rounded-full opacity-80 animate-bounce-custom"></div>
-              <div className="absolute bottom-2 right-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-pink-400 rounded-full opacity-80 animate-bounce-custom delay-1000"></div>
-            </div>
-          </div>
-          <div className="text-left lg:text-left">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-amber-400">About Me</h2>
-            <p className="text-gray-300 leading-relaxed text-lg mb-6">
-              As a dedicated Full-Stack Java Developer, I specialize in crafting innovative, high-performance web applications that blend seamless functionality with intuitive design. Leveraging cutting-edge technologies such as{' '}
-              <span className="text-cyan-400 font-semibold">React</span>, <span className="text-cyan-400 font-semibold">Next.js</span>, and{' '}
-              <span className="text-cyan-400 font-semibold">TailwindCSS</span>, I ensure every project delivers an exceptional user experience. My passion lies in solving complex problems through clean, efficient code and collaborative development practices.
+            <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
+              I’m a Full-Stack Java Developer specializing in building (and occasionally designing) exceptional digital experiences.
             </p>
-            <p className="text-gray-400 text-base">
-              With a keen eye for detail and a commitment to continuous learning, I thrive on turning ideas into reality. Let's build something amazing together!
-            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#projects" className="px-8 py-4 bg-cyan-500 text-black font-bold rounded-xl hover:bg-cyan-400 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+                View Projects
+              </a>
+              <a href="#about" className="px-8 py-4 border border-white/10 font-bold rounded-xl hover:bg-white/5 transition-all">
+                About Me
+              </a>
+            </div>
+          </div>
+          
+          <div className="relative flex justify-center lg:justify-end animate-in fade-in zoom-in duration-1000 delay-300">
+             <div className="relative w-72 h-72 lg:w-96 lg:h-96 group">
+                {/* Decorative Rings */}
+                <div className="absolute inset-0 border-2 border-cyan-500/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                <div className="absolute inset-4 border border-purple-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                
+                <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-white/10 shadow-2xl group-hover:border-cyan-500/50 transition-colors">
+                   <img src="/m3.png" alt="Profile" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                </div>
+             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 lg:px-8 bg-gradient-to-b from-black via-blue-950 to-black fade-in delay-2">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-amber-400">Featured Projects</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { title: "Virtual Assistant", img: "/tri1.png", desc: "An AI-powered virtual assistant for streamlined task management." },
-            { title: "Library Management System", img: "/lms.png", desc: "A comprehensive system for managing library resources efficiently." },
-            { title: "Database Management Tool", img: "/crud.png", desc: "A robust CRUD application for database operations." },
-            { title: "E-Commerce Platform", img: "/demo1.png", desc: "A scalable online store with secure payment integration." },
-            { title: "Portfolio Website", img: "/demo2.png", desc: "A responsive personal portfolio showcasing skills and projects." },
-            { title: "Task Tracker App", img: "/demo3.png", desc: "A productivity app for tracking daily tasks and goals." }
-          ].map((p, i) => (
-            <div key={i} className="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-cyan-400 transition-all duration-500 hover:scale-105 border-2 border-gray-700 glow-effect">
-              <img src={p.img} alt={p.title} className="w-full h-48 object-cover opacity-90 hover:opacity-100 transition-opacity duration-300" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-cyan-400">{p.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+      {/* Projects Grid - Bento Box Style */}
+      <section id="projects" className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 text-center lg:text-left">
+            <h2 className="text-sm font-bold tracking-widest text-cyan-500 uppercase mb-4">Portfolio</h2>
+            <h3 className="text-4xl lg:text-5xl font-bold">Featured Creations</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all">
+                <div className="aspect-video bg-gray-800 overflow-hidden">
+                   <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 group-hover:scale-110 transition-transform duration-500"></div>
+                </div>
+                <div className="p-8">
+                  <div className="flex gap-2 mb-4">
+                    <span className="text-[10px] px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 font-bold uppercase">React</span>
+                    <span className="text-[10px] px-2 py-1 rounded bg-purple-500/10 text-purple-400 font-bold uppercase">Java</span>
+                  </div>
+                  <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Project Title {i}</h4>
+                  <p className="text-gray-400 text-sm mb-6">A brief description of the technical challenges solved in this specific project.</p>
+                  <a href="#" className="text-sm font-bold flex items-center text-white group-hover:gap-2 transition-all">
+                    View Case Study <span className="opacity-0 group-hover:opacity-100">→</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 lg:px-8 bg-gradient-to-b from-blue-950 via-black to-blue-950 fade-in delay-3 " >
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-amber-400">Skills & Technologies</h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
-          {skills.map((skill, i) => (
-            <div key={i} className="bg-black py-6 rounded-xl hover:border-cyan-400 hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center border-2 border-gray-700 glow-effect">
-              <img src={skill.logo} alt={skill.name} className="w-12 h-12 mb-3" />
-              <span className="text-gray-300 text-sm font-medium">{skill.name}</span>
-            </div>
-          ))}
+      {/* Contact CTA */}
+      <section id="contact" className="py-32 px-6">
+        <div className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-cyan-600 to-blue-700 p-12 lg:p-24 text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+          <h2 className="text-4xl lg:text-6xl font-black text-white mb-8">Ready to start a <br/> conversation?</h2>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+             <a href="mailto:pritesh@example.com" className="px-10 py-5 bg-white text-black font-black rounded-2xl hover:scale-105 transition-transform">
+                Email Me Directly
+             </a>
+             <a href="#" className="px-10 py-5 bg-black/20 text-white font-black rounded-2xl backdrop-blur-md hover:bg-black/30 transition-all">
+                LinkedIn Profile
+             </a>
+          </div>
         </div>
       </section>
 
-      {/* Certificates Section */}
-      <section id="certificates" className="py-20 px-4 lg:px-8 bg-gradient-to-b from-black via-blue-950 to-black fade-in delay-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-amber-400">Certifications</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { title: "TATA TCS iON Certification", img: "/tcs.cirty.png", issuer: "TATA TCS iON" },
-            { title: "Resume Writing & Job Interviewing", img: "/cirty1.1.png", issuer: "Professional Development Institute" },
-            { title: "Introduction to Cybersecurity Awareness", img: "/cirty2.2.png", issuer: "Cybersecurity Foundation" },
-            { title: "Data Privacy Fundamentals", img: "/cirty3.3.png", issuer: "Privacy Compliance Academy" },
-            { title: "Communication Skills", img: "/cirty4.jpg", issuer: "Soft Skills Training Center" },
-            { title: "Database Management", img: "/cirty5.png", issuer: "Database Experts Inc." }
-          ].map((c, i) => (
-            <div key={i} className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-cyan-400 transition-all duration-500 hover:scale-105 border-2 border-gray-700 glow-effect">
-              <img src={c.img} alt={c.title} className="w-full h-48 object-cover opacity-90 hover:opacity-100 transition-opacity duration-300" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-cyan-400 mb-2">{c.title}</h3>
-                <p className="text-gray-400 text-sm">Issued by {c.issuer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Footer */}
+      <footer className="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>© 2026 Pritesh Patel. Built with Next.js & Passion.</p>
+      </footer>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 lg:px-8 text-center bg-gradient-to-b from-blue-950 via-black to-blue-950 fade-in delay-5">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-amber-400">Get In Touch</h2>
-        <p className="text-gray-400 mb-10 text-lg max-w-2xl mx-auto">
-          I'm always excited to discuss new opportunities, collaborate on projects, or simply connect. Feel free to reach out!
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="mailto:priteshpatel@email.com" className="border-2 border-cyan-400 px-8 py-4 rounded-full text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 text-lg font-semibold glow-effect">
-            Email Me
-          </a>
-          <a href="https://linkedin.com/in/priteshpatel" className="border-2 border-gray-600 px-8 py-4 rounded-full text-gray-400 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 text-lg font-semibold glow-effect">
-            LinkedIn
-          </a>
-        </div>
-      </section>
+      {/* Required Animations for Tailwind (Add to global.css) */}
+      <style jsx global>{`
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-30px); }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 6s ease-in-out infinite;
+        }
+        html { scroll-behavior: smooth; }
+      `}</style>
     </div>
   );
-} 
+}
